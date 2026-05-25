@@ -85,12 +85,14 @@ interface EmailPreviewModalProps {
   isOpen: boolean
   onClose: () => void
   html: string
+  title: string
 }
 
 export default function EmailPreviewModal({
   isOpen,
   onClose,
   html,
+  title,
 }: EmailPreviewModalProps) {
   const [selectedClientId, setSelectedClientId] = useState<string>(
     'outlook-windows-legacy',
@@ -117,7 +119,7 @@ export default function EmailPreviewModal({
       <ModalOverlay />
       <ModalContent maxH="85vh" overflow="hidden" borderRadius="lg">
         <ModalHeader borderBottom="1px solid" borderColor="base.divider.medium">
-          <Flex direction="column">Preview your email</Flex>
+          <Flex direction="column">{title}</Flex>
           <ModalCloseButton />
         </ModalHeader>
         <ModalBody p={4}>
