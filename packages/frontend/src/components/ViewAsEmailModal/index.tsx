@@ -81,19 +81,19 @@ function ClientOptionsList({
   )
 }
 
-interface EmailPreviewModalProps {
+interface ViewAsEmailModalProps {
   isOpen: boolean
   onClose: () => void
   html: string
   title: string
 }
 
-export default function EmailPreviewModal({
+export default function ViewAsEmailModal({
   isOpen,
   onClose,
   html,
   title,
-}: EmailPreviewModalProps) {
+}: ViewAsEmailModalProps) {
   const [selectedClientId, setSelectedClientId] = useState<string>(
     'outlook-windows-legacy',
   )
