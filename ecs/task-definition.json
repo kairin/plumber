@@ -84,8 +84,12 @@
           "value": "env:<ENVIRONMENT> service:plumber team:plumber"
         },
         {
+          "name": "DD_DATABASE_NAME",
+          "value": "plumber-<ENVIRONMENT>"
+        },
+        {
           "name": "DD_CHECKS",
-          "value": "{\"postgres\":{\"instances\":[{\"host\":\"%%env_DD_DATABASE_HOST%%\",\"port\":5432,\"username\":\"datadog\",\"password\":\"%%env_DD_DATABASE_USER_PASSWORD%%\",\"dbm\":true,\"database_autodiscovery\":{\"enabled\":true}}]}}"
+          "value": "{\"postgres\":{\"instances\":[{\"host\":\"%%env_DD_DATABASE_HOST%%\",\"port\":5432,\"username\":\"datadog\",\"password\":\"%%env_DD_DATABASE_USER_PASSWORD%%\",\"dbm\":true, \"dbname\": \"%%env_DD_DATABASE_NAME%%\"}]}}"
         }
       ],
       "mountPoints": [],
