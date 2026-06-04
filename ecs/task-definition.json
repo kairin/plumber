@@ -82,6 +82,10 @@
         {
           "name": "DD_TAGS",
           "value": "env:<ENVIRONMENT> service:plumber team:plumber"
+        },
+        {
+          "name": "DD_CHECKS",
+          "value": "{\"postgres\":{\"instances\":[{\"host\":\"%%env_DD_DATABASE_HOST%%\",\"port\":5432,\"username\":\"datadog\",\"password\":\"%%env_DD_DATABASE_USER_PASSWORD%%\",\"dbm\":true,\"database_autodiscovery\":{\"enabled\":true}}]}}"
         }
       ],
       "mountPoints": [],
@@ -90,6 +94,14 @@
         {
           "name": "DD_API_KEY",
           "valueFrom": "plumber-dd-api-key"
+        },
+        {
+          "name": "DD_DATABASE_HOST",
+          "valueFrom": "plumber-<ENVIRONMENT>-rds-host"
+        },
+        {
+          "name": "DD_DATABASE_USER_PASSWORD",
+          "valueFrom": "plumber-<ENVIRONMENT>-dd-postgres-password"
         }
       ],
       "logConfiguration": {

@@ -9,6 +9,7 @@ tracer.init({
   service: 'plumber',
   logger,
   env: appConfig.appEnv,
+  dbmPropagationMode: 'full',
 })
 
 export default tracer
