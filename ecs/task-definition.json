@@ -115,7 +115,7 @@
       "dockerLabels": {
         "com.datadoghq.ad.check_names": "[\"postgres\"]",
         "com.datadoghq.ad.init_configs": "[{}]",
-        "com.datadoghq.ad.instances": "[{\"dbm\": true, \"host\": \"%%env_DD_DATABASE_HOST%%\", \"port\": 5432, \"username\": \"datadog\", \"password\": \"%%env_DD_DATABASE_USER_PASSWORD%%\", \"dbname\": \"%%env_DD_DATABASE_NAME%%\"}, \"explain_parameterized_queries\": true, \"tags\": [\"service:plumber-database\"]}]"
+        "com.datadoghq.ad.instances": "[{\"dbm\": true, \"host\": \"%%env_DD_DATABASE_HOST%%\", \"port\": 5432, \"username\": \"datadog\", \"password\": \"%%env_DD_DATABASE_USER_PASSWORD%%\", \"database_autodiscovery\":{\"enabled\":true,\"include\":[\"%%env_DD_DATABASE_NAME%%\"]}, \"explain_parameterized_queries\": true, \"tags\": [\"service:plumber-database\"]}]"
       }
     }
   ],
